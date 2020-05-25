@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "mime": "^1.2.11",
-    "request": "2.44.0"
+    "request": "^2.44.0"
   },
   "directories": {
     "test": "test"
