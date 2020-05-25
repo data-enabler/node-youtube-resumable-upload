@@ -9,14 +9,15 @@
   "author": "Gray Leonard",
   "license": "ISC",
   "dependencies": {
-    "google-auth-cli": "0.0.1",
     "mime": "^1.2.11",
     "request": "2.44.0"
   },
   "directories": {
     "test": "test"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "google-auth-cli": "0.0.1"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/grayleonard/node-youtube-resumable-upload.git"
