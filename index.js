@@ -26,7 +26,7 @@ resumableUpload.prototype.upload = function() {
 		headers: {
 		  'Host':			self.host,
 		  'Authorization':		'Bearer ' + self.tokens.access_token,
-		  'Content-Length':		new Buffer(JSON.stringify(self.metadata)).length,
+		  'Content-Length':		Buffer.from(JSON.stringify(self.metadata)).length,
 		  'Content-Type':		'application/json',
 		  'X-Upload-Content-Length':	fs.statSync(self.filepath).size,
 		  'X-Upload-Content-Type': 	mime.lookup(self.filepath)
