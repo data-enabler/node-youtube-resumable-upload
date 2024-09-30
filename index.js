@@ -12,6 +12,7 @@ function resumableUpload() {
 	this.retry	= -1;
 	this.host	= 'www.googleapis.com';
 	this.api	= '/upload/youtube/v3/videos';
+	this.notifySubscribers = true;
 };
 
 util.inherits(resumableUpload, EventEmitter);
@@ -19,8 +20,9 @@ util.inherits(resumableUpload, EventEmitter);
 //Init the upload by POSTing google for an upload URL (saved to self.location)
 resumableUpload.prototype.upload = function() {
 	var self = this;
+	var notifyParam = (self.notifySubscribers) ? '' : '&notifySubscribers=False';
 	var options = {
-		url:	'https://' + self.host + self.api + '?uploadType=resumable&part=snippet,status,contentDetails',
+		url:	'https://' + self.host + self.api + '?uploadType=resumable&part=snippet,status,contentDetails' + notifyParam,
 		headers: {
 		  'Host':			self.host,
 		  'Authorization':		'Bearer ' + self.tokens.access_token,
